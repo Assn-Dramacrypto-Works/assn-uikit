@@ -7,5 +7,4 @@ export interface BalanceInputProps extends BoxProps {
     placeholder?: string;
     inputProps?: Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "placeholder" | "onChange">;
     isWarning?: boolean;
-    decimals?: number;
 }

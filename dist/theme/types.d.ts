@@ -29,7 +29,6 @@ export declare type Gradients = {
     blue: string;
     violet: string;
     violetAlt: string;
-    gold: string;
 };
 export declare type Colors = {
     primary: string;
@@ -53,7 +52,7 @@ export declare type Colors = {
     text: string;
     textDisabled: string;
     textSubtle: string;
-    disabled: string;
+    borderColor: string;
     gradients: Gradients;
     binance: string;
     overlay: string;
