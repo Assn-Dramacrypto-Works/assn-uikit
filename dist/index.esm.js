@@ -3249,7 +3249,7 @@ var Icon$i = function (props) {
 var Logo$2 = function (_a) {
     _a.isDark; var props = __rest(_a, ["isDark"]);
     return (React.createElement(Svg, __assign({ viewBox: "0 0 640 260" }, props),
-        React.createElement("image", { width: "640", height: "260", href: "/iamges/swap-logo.png" })));
+        React.createElement("image", { width: "640", height: "260", href: "/images/swap-logo.png" })));
 };
 var LogoWithText = React.memo(Logo$2, function (prev, next) { return prev.isDark === next.isDark; });
 
