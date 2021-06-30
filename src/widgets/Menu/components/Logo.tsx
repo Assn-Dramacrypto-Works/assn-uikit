@@ -22,13 +22,13 @@ const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   .mobile-icon {
-    width: 160px;
+    width: 120px;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: none;
     }
   }
   .desktop-icon {
-    width: 160px;
+    width: 130px;
     display: none;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: block;
@@ -59,8 +59,8 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
   );
 
   return (
-    <Flex>
-      <MenuButton aria-label="Toggle menu" onClick={togglePush} mr="24px">
+    <Flex alignItems="center">
+      <MenuButton aria-label="Toggle menu" onClick={togglePush} mr="15px">
         {isPushed ? (
           <HamburgerCloseIcon width="24px" color="textSubtle" />
         ) : (
