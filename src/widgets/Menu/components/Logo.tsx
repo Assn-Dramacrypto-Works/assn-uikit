@@ -22,13 +22,13 @@ const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   .mobile-icon {
-    width: 120px;
+    width: 56px;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: none;
     }
   }
   .desktop-icon {
-    width: 130px;
+    width: 56px;
     display: none;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: block;
@@ -62,9 +62,9 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
     <Flex alignItems="center">
       <MenuButton aria-label="Toggle menu" onClick={togglePush} mr="15px">
         {isPushed ? (
-          <HamburgerCloseIcon width="24px" color="textSubtle" />
+          <HamburgerCloseIcon width="24px" color="#2ad4ff" />
         ) : (
-          <HamburgerIcon width="24px" color="textSubtle" />
+          <HamburgerIcon width="24px" color="#2ad4ff" />
         )}
       </MenuButton>
       {isAbsoluteUrl ? (
