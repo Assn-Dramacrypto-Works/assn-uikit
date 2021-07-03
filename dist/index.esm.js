@@ -1556,11 +1556,11 @@ var GridLayout = styled(GridLayout$1)(templateObject_1$x || (templateObject_1$x 
 });
 var templateObject_1$x;
 
-var StyledLink = styled(Text)(templateObject_1$w || (templateObject_1$w = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n"])));
+var StyledLink$1 = styled(Text)(templateObject_1$w || (templateObject_1$w = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n"])));
 var Link = function (_a) {
     var external = _a.external, props = __rest(_a, ["external"]);
     var internalProps = external ? getExternalLinkProps() : {};
-    return React.createElement(StyledLink, __assign({ as: "a", bold: true }, internalProps, props));
+    return React.createElement(StyledLink$1, __assign({ as: "a", bold: true }, internalProps, props));
 };
 Link.defaultProps = {
     color: "primary",
@@ -3331,7 +3331,7 @@ MenuButton.defaultProps = {
 var templateObject_1$d;
 
 var blink = keyframes(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  0%,  100% { transform: scaleY(1); } \n  50% { transform:  scaleY(0.1); } \n"], ["\n  0%,  100% { transform: scaleY(1); } \n  50% { transform:  scaleY(0.1); } \n"])));
-styled(Link$1)(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 56px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 56px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n  .right-eye {\n    animation-delay: 20ms;\n  }\n  &:hover {\n    .left-eye,\n    .right-eye {\n      transform-origin: center 60%;\n      animation-name: ", ";\n      animation-duration: 350ms;\n      animation-iteration-count: 1;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 56px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 56px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n  .right-eye {\n    animation-delay: 20ms;\n  }\n  &:hover {\n    .left-eye,\n    .right-eye {\n      transform-origin: center 60%;\n      animation-name: ", ";\n      animation-duration: 350ms;\n      animation-iteration-count: 1;\n    }\n  }\n"])), function (_a) {
+var StyledLink = styled(Link$1)(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 56px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 56px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n  .right-eye {\n    animation-delay: 20ms;\n  }\n  &:hover {\n    .left-eye,\n    .right-eye {\n      transform-origin: center 60%;\n      animation-name: ", ";\n      animation-duration: 350ms;\n      animation-iteration-count: 1;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 56px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 56px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n  .right-eye {\n    animation-delay: 20ms;\n  }\n  &:hover {\n    .left-eye,\n    .right-eye {\n      transform-origin: center 60%;\n      animation-name: ", ";\n      animation-duration: 350ms;\n      animation-iteration-count: 1;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 }, function (_a) {
@@ -3340,12 +3340,13 @@ styled(Link$1)(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(
 }, blink);
 var Logo = function (_a) {
     var isPushed = _a.isPushed, togglePush = _a.togglePush, isDark = _a.isDark, href = _a.href;
-    href.startsWith("http");
-    (React.createElement(React.Fragment, null,
+    var isAbsoluteUrl = href.startsWith("http");
+    var innerLogo = (React.createElement(React.Fragment, null,
         React.createElement(LogoWithText, { className: "mobile-icon", isDark: isDark }),
         React.createElement(LogoWithText, { className: "desktop-icon", isDark: isDark })));
     return (React.createElement(Flex, { alignItems: "center" },
-        React.createElement(MenuButton, { "aria-label": "Toggle menu", onClick: togglePush, mr: "15px" }, isPushed ? (React.createElement(Icon$n, { width: "24px", color: "#2ad4ff" })) : (React.createElement(Icon$o, { width: "24px", color: "#2ad4ff" })))));
+        React.createElement(MenuButton, { "aria-label": "Toggle menu", onClick: togglePush, mr: "15px" }, isPushed ? (React.createElement(Icon$n, { width: "24px", color: "#2ad4ff" })) : (React.createElement(Icon$o, { width: "24px", color: "#2ad4ff" }))),
+        isAbsoluteUrl ? (React.createElement(StyledLink, { as: "a", href: href, "aria-label": "Assn home page" }, innerLogo)) : (React.createElement(StyledLink, { to: href, "aria-label": "Assn home page" }, innerLogo))));
 };
 var Logo$1 = React.memo(Logo, function (prev, next) { return prev.isPushed === next.isPushed && prev.isDark === next.isDark; });
 var templateObject_1$c, templateObject_2$5;
